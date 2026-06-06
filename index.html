@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SynLingo — ISL to Text Accessibility Platform</title>
+  <meta name="description" content="SynLingo is an upcoming AI-powered platform translating Indian Sign Language into real-time text for accessible communication." />
+  <style>
+    :root {
+      --paper: #f6f2ea;
+      --ink: #10100e;
+      --accent: #ff4f1f;
+      --accent-2: #0f62fe;
+      --line: #1a1a1a;
+      --muted: #525252;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", "Avenir Next", system-ui, sans-serif;
+      line-height: 1.4;
+    }
+
+    h1, h2, h3, .display {
+      font-family: "Times New Roman", "Iowan Old Style", Georgia, serif;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .shell {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 1.2rem;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 0.75rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .hero-main {
+      border: 2px solid var(--line);
+      background: linear-gradient(135deg, #fff 0%, #efe8dc 100%);
+      padding: 1rem;
+      min-height: 420px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 0.73rem;
+      letter-spacing: 0.11em;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .display {
+      font-size: clamp(2rem, 6vw, 4.7rem);
+      line-height: 0.96;
+      margin: 0.4rem 0 0.8rem;
+      text-wrap: balance;
+    }
+
+    .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 58ch; }
+
+    .stamp {
+      justify-self: start;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.35rem 0.6rem;
+      border: 2px solid var(--line);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+    }
+
+    .collage {
+      border: 2px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #fff;
+    }
+
+    .tile {
+      aspect-ratio: 1 / 1;
+      border-right: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile:nth-child(4n) { border-right: 0; }
+    .tile:nth-last-child(-n + 4) { border-bottom: 0; }
+
+    .tile::before,
+    .tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+    }
+
+    .tile::before {
+      background: radial-gradient(circle at var(--x, 40%) var(--y, 30%), rgba(255, 79, 31, 0.82), transparent 45%);
+    }
+
+    .tile::after {
+      background: linear-gradient(var(--d, 120deg), rgba(15, 98, 254, 0.5), transparent 48%);
+    }
+
+    .section {
+      margin-top: 1rem;
+      border: 2px solid var(--line);
+      background: #fff;
+      padding: 1rem;
+    }
+
+    .section h2 {
+      font-size: clamp(1.4rem, 2.7vw, 2.4rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-grid,
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    .card {
+      border: 2px solid var(--line);
+      background: var(--paper);
+      padding: 0.75rem;
+    }
+
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.45rem; }
+    .meta { color: var(--muted); font-size: 0.92rem; }
+
+    .status {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: var(--accent-2);
+      border: 2px solid var(--line);
+      padding: 0.55rem 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-size: 0.74rem;
+    }
+
+    footer {
+      margin: 1rem 0 0.2rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-main { min-height: auto; }
+      .status { grid-template-columns: 1fr; }
+      .collage { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      .shell { padding: 0.8rem; }
+      .collage { grid-template-columns: repeat(2, 1fr); }
+      .tile:nth-child(4n) { border-right: 2px solid var(--line); }
+      .tile:nth-child(2n) { border-right: 0; }
+      .tile:nth-last-child(-n + 4) { border-bottom: 2px solid var(--line); }
+      .tile:nth-last-child(-n + 2) { border-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topline">
+      <span>SynLingo / Editorial Prototype</span>
+      <span id="audience">For everyone</span>
+    </div>
+
+    <section class="hero">
+      <article class="hero-main">
+        <div>
+          <p class="eyebrow" id="eyebrow">APS Bhopal · Class 11 Team</p>
+          <h1 class="display" id="headline">Indian Sign Language, translated into real-time text.</h1>
+          <p class="hero-sub" id="subheadline"></p>
+        </div>
+        <span class="stamp">In Development</span>
+      </article>
+      <aside class="collage" id="collage" aria-label="Editorial collage"></aside>
+    </section>
+
+    <section class="section" aria-labelledby="problem-title">
+      <h2 id="problem-title"></h2>
+      <p id="problem-body"></p>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <h2 id="features-title">Planned Features</h2>
+      <div class="feature-grid" id="features"></div>
+    </section>
+
+    <section class="section" aria-labelledby="team-title">
+      <h2 id="team-title"></h2>
+      <div class="team-grid" id="team"></div>
+    </section>
+
+    <section class="section status" aria-labelledby="status-headline">
+      <div>
+        <h2 id="status-headline"></h2>
+        <p id="status-detail"></p>
+      </div>
+      <a class="btn" id="poc-link" href="#" rel="noopener">Proof of Concept</a>
+    </section>
+
+    <section class="section status" aria-labelledby="cta-title">
+      <div>
+        <h2 id="cta-title"></h2>
+        <p id="cta-description"></p>
+      </div>
+      <a class="btn" id="cta-link" href="#" rel="noopener">Follow Updates</a>
+    </section>
+
+    <footer>
+      <span>SynLingo © <span id="year"></span> · Privacy-first by design · No personal data stored</span>
+    </footer>
+  </main>
+
+  <script>
+    async function loadContent() {
+      try {
+        const res = await fetch('inputs.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to load inputs.json');
+        const data = await res.json();
+
+        document.getElementById('audience').textContent = `For ${data.project.audience}`;
+        document.getElementById('eyebrow').textContent = data.hero.eyebrow;
+        document.getElementById('headline').textContent = data.hero.headline;
+        document.getElementById('subheadline').textContent = data.hero.subheadline;
+
+        document.getElementById('problem-title').textContent = data.problemStatement.title;
+        document.getElementById('problem-body').textContent = data.problemStatement.body;
+
+        document.getElementById('team-title').textContent = data.aboutTeam.title;
+        document.getElementById('status-headline').textContent = data.status.headline;
+        document.getElementById('status-detail').textContent = data.status.detail;
+
+        const poc = document.getElementById('poc-link');
+        poc.textContent = data.status.pocLabel;
+        poc.href = data.status.pocUrl || '#';
+
+        document.getElementById('cta-title').textContent = data.cta.title;
+        document.getElementById('cta-description').textContent = data.cta.description;
+
+        const cta = document.getElementById('cta-link');
+        cta.textContent = data.cta.primaryLabel;
+        cta.href = data.cta.primaryUrl || '#';
+
+        const features = document.getElementById('features');
+        features.innerHTML = data.features.map(item => `
+          <article class="card">
+            <h3>${item.name}</h3>
+            <p class="meta">${item.description}</p>
+          </article>
+        `).join('');
+
+        const team = document.getElementById('team');
+        team.innerHTML = data.aboutTeam.members.map(member => `
+          <article class="card">
+            <h3>${member.name}</h3>
+            <p class="meta">${member.role}</p>
+          </article>
+        `).join('');
+
+        const collage = document.getElementById('collage');
+        const count = data.collage?.assetCount || 16;
+        collage.innerHTML = Array.from({ length: count }, (_, i) => {
+          const x = 10 + ((i * 17) % 80);
+          const y = 10 + ((i * 23) % 80);
+          const d = 20 + ((i * 37) % 160);
+          return `<span class="tile" style="--x:${x}%;--y:${y}%;--d:${d}deg" aria-hidden="true"></span>`;
+        }).join('');
+      } catch {
+        document.getElementById('subheadline').textContent = 'SynLingo is currently in development.';
+        const collage = document.getElementById('collage');
+        collage.innerHTML = Array.from({ length: 16 }, () => '<span class="tile" aria-hidden="true"></span>').join('');
+      }
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    loadContent();
+  </script>
+</body>
+</html>

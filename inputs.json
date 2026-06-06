@@ -1,0 +1,75 @@
+{
+  "project": {
+    "name": "SynLingo",
+    "siteType": "single-page editorial landing",
+    "targetPlatform": "responsive web",
+    "audience": "general public, educators, accessibility advocates, and potential users",
+    "visualTone": [
+      "brutalist",
+      "experimental",
+      "editorial",
+      "magazine collage"
+    ],
+    "brandDirection": "Atelier Zero"
+  },
+  "hero": {
+    "eyebrow": "APS Bhopal · Class 11 Team",
+    "headline": "Indian Sign Language, translated into real-time text.",
+    "subheadline": "SynLingo is an upcoming AI-powered web platform built to make everyday communication accessible and independent for the hearing- and speech-impaired community."
+  },
+  "problemStatement": {
+    "title": "The communication gap is still a daily barrier.",
+    "body": "In schools, clinics, offices, and public spaces, people who rely on ISL often face delays, misunderstandings, and dependence on intermediaries. SynLingo aims to reduce that friction through direct sign-to-text interaction in the browser."
+  },
+  "features": [
+    {
+      "name": "Real-time computer vision translation",
+      "description": "Detects and interprets ISL gestures in near real time to generate readable text output."
+    },
+    {
+      "name": "Visual hand-placement guidance",
+      "description": "Provides live framing and hand-position cues to improve recognition quality and confidence."
+    },
+    {
+      "name": "Client-side privacy by design",
+      "description": "No personal data is stored; processing is planned to remain browser-side for safer interaction."
+    }
+  ],
+  "aboutTeam": {
+    "title": "Built by students at APS Bhopal",
+    "members": [
+      {
+        "name": "Saumya",
+        "role": "Project strategy & research"
+      },
+      {
+        "name": "Vishwajith",
+        "role": "Model and platform engineering"
+      },
+      {
+        "name": "Drishti",
+        "role": "Dataset curation & testing"
+      },
+      {
+        "name": "Manya",
+        "role": "Design, communication & outreach"
+      }
+    ]
+  },
+  "status": {
+    "headline": "In active development",
+    "detail": "The full SynLingo platform is currently being developed with a custom-trained ISL dataset and more advanced sentence formation.",
+    "pocLabel": "See experimental proof of concept",
+    "pocUrl": "#"
+  },
+  "cta": {
+    "title": "Accessibility should feel immediate.",
+    "description": "SynLingo is being designed for inclusive everyday conversation — from classrooms to customer counters.",
+    "primaryLabel": "Follow project updates",
+    "primaryUrl": "#"
+  },
+  "collage": {
+    "assetCount": 16,
+    "mode": "generated placeholders"
+  }
+}
