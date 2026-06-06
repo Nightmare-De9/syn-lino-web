@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SynLingo — ISL to Text Accessibility Platform</title>
+  <meta
+    name="description"
+    content="SynLingo is an upcoming AI-powered platform translating Indian Sign Language into real-time text for accessible communication."
+  />
+  <style>
+    :root {
+      --paper: #f5f2ea;
+      --ink: #151515;
+      --accent: #ed3b2f;
+      --muted: #6d6a65;
+      --line: #cbc6bc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", "Arial", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      background: #fffdf9;
+      padding: clamp(1rem, 2vw, 2rem);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+      align-items: end;
+    }
+    .kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+    h1, h2, h3, p { margin: 0 0 1rem; }
+    h1 {
+      font-size: clamp(2rem, 6vw, 5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid var(--ink);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin: 0 0.4rem 0.4rem 0;
+    }
+    .accent {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .feature-list {
+      display: grid;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .feature-list li {
+      border-top: 1px solid var(--line);
+      padding-top: 0.75rem;
+    }
+    .team {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .person {
+      border: 1px dashed var(--line);
+      padding: 0.75rem;
+      background: #fff;
+    }
+    .proof {
+      border-left: 5px solid var(--accent);
+      padding-left: 1rem;
+      margin-top: 1rem;
+    }
+    a {
+      color: inherit;
+      text-underline-offset: 0.2em;
+    }
+    @media (max-width: 900px) {
+      .hero,
+      .grid-2,
+      .team {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel hero">
+      <div>
+        <p class="kicker">SynLingo / Editorial Prototype / APS Bhopal</p>
+        <h1>Translation for hands, voices, and everyday dignity.</h1>
+        <p>
+          SynLingo is an <span class="accent">upcoming AI-powered web platform</span> that translates
+          Indian Sign Language (ISL) into real-time text so hearing- and speech-impaired users can
+          interact independently in classrooms, clinics, stores, and daily public spaces.
+        </p>
+      </div>
+      <div>
+        <span class="tag">Responsive Web</span>
+        <span class="tag">Brutalist Editorial</span>
+        <span class="tag">In Development</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>The Problem</h2>
+      <p>
+        Communication barriers still exclude millions from instant everyday conversations. SynLingo is
+        being built to reduce that gap by turning live ISL gestures into readable text output in real
+        time, making access immediate and practical rather than delayed or dependent.
+      </p>
+    </section>
+
+    <section class="grid-2">
+      <article class="panel">
+        <h2>Planned Features</h2>
+        <ul class="feature-list">
+          <li>
+            <h3>Real-time computer vision translation</h3>
+            <p>Capture sign movements and convert them into readable text without interrupting flow.</p>
+          </li>
+          <li>
+            <h3>Visual hand-placement guidance</h3>
+            <p>On-screen cues help users position hands correctly for more reliable recognition.</p>
+          </li>
+          <li>
+            <h3>Strict client-side privacy</h3>
+            <p>Processing is privacy-aware and no personal data is stored by this landing experience.</p>
+          </li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Roadmap Snapshot</h2>
+        <p>
+          The full platform is actively in development with a custom-trained ISL dataset and advanced
+          sentence formation. A basic experimental version exists as proof of concept while the final
+          model and UX are being refined.
+        </p>
+        <p class="proof">
+          Proof of concept:
+          <a href="#" aria-label="Proof of concept link placeholder">Demo reference coming soon</a>
+        </p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>About Us — Team SynLingo</h2>
+      <p>
+        Built by Class 11 students at APS Bhopal with a shared goal: practical accessibility through
+        human-centered AI.
+      </p>
+      <div class="team">
+        <article class="person"><strong>Saumya</strong><br />Product direction & problem framing</article>
+        <article class="person"><strong>Vishwajith</strong><br />Computer vision & model prototyping</article>
+        <article class="person"><strong>Drishti</strong><br />Design research & interaction planning</article>
+        <article class="person"><strong>Manya</strong><br />Content, testing, and communication</article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
